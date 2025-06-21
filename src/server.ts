@@ -1,6 +1,7 @@
-console.log("Executed");
+import dotenv from "dotenv"; //in commonjs  const dotenv = require("dotenv")
 
-import moment from "moment";
+dotenv.config();
 
-const currentTime = moment().format("YYYY-MM-DD HH:mm:ss");
-console.log(`Current time is: ${currentTime}`);
+console.log("PORT:", process.env.PORT);
+
+console.log("MONGO_URL:", process.env.MONGO_URL);
