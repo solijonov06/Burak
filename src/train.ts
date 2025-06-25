@@ -1,6 +1,27 @@
 console.log("This is the train.ts file");
 console.log('Bugungi MIT-Task natijasi: ');
 
+/*TASK HH2-TASK: 
+
+Shunday function tuzing, unga string argument pass bolsin. Function ushbu agrumentdagi digitlarni yangi stringda return qilsin
+
+MASALAN: getDigits("m14i1t") return qiladi "141"*/
+function getDigits(str: string): string {
+    let result = "";
+    for (let char of str) {
+        if (!isNaN(Number(char)) && char !== " ") {
+            result += char;
+        }
+    }
+    return result;
+   
+}
+
+console.log(getDigits("i am 24 years old"));
+
+
+
+
 
 /*TASK H: 
 
@@ -11,15 +32,15 @@ MASALAN: getPositive([1, -4, 2]) return qiladi "12"*/
 
 //Solution:
 
-function getPositive(arr: number[]) {
-    if (!Array.isArray(arr) || arr.length === 0) {
-        console.error("Iltimos, array kiriting.");
-        return false; 
-    }
-    let positiveValues: number[] = arr.filter(num => num > 0);
-    return positiveValues.join('');
-}
-console.log(getPositive([-9, 25, 2])); 
+// function getPositive(arr: number[]) {
+//     if (!Array.isArray(arr) || arr.length === 0) {
+//         console.error("Iltimos, array kiriting.");
+//         return false; 
+//     }
+//     let positiveValues: number[] = arr.filter(num => num > 0);
+//     return positiveValues.join('');
+// }
+// console.log(getPositive([-9, 25, 2])); 
 
 
 

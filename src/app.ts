@@ -5,9 +5,9 @@ import router from "./router";
 
 /**1-ENTRANCE **/
 const app =express();
-app.use(express.static(path.join(__dirname, "public")))
-app.use(express.urlencoded({extended: true}));
-app.use(express.json());
+app.use(express.static(path.join(__dirname, "public"))) // faylorlarni public papkasidan olish uchun
+app.use(express.urlencoded({extended: true})); // tradidional API uchun
+app.use(express.json()); // rest API uchun
 
 
 /**2-SESSIONS **/
