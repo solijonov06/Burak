@@ -1,6 +1,15 @@
 console.log("This is the train.ts file");
 console.log('Bugungi MIT-Task natijasi: ');
 
+/*Project standards:
+-Logging standards
+-Naming standards:
+    function, variable, method => CAMEL
+    class                      =>PASCAL
+    folder, file               =>KEBAB
+    css                        =>SNAKE */
+
+
 /*TASK HH2-TASK: 
 
 Shunday function tuzing, unga string argument pass bolsin. Function ushbu agrumentdagi digitlarni yangi stringda return qilsin
