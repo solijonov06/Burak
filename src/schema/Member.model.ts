@@ -48,6 +48,10 @@ const memberSchema = new Schema ({
         type:Number,
         default: 0,
     },
+
+    memberModel:{
+        type: String
+    }
 },
 {timestamps: true} // {timestamps: true} adds createdAt and updatedAt fields automatically
 
