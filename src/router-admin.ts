@@ -1,5 +1,5 @@
 import express from "express";
-const routerAdmin = express.Router();
+const routerAdmin = express.Router(); 
 import restarauntController from "./controllers/restaraunt.controller"
 
 /*Restarauunt */

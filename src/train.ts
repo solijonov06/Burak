@@ -1,5 +1,19 @@
 console.log("This is the train.ts file");
 console.log('Bugungi MIT-Task natijasi: ');
+/*
+TASK-I:
+
+Shunday function tuzing, u parametrdagi array ichida eng ko'p
+takrorlangan raqamni topib qaytarsin.
+
+MASALAN: majorityElement([1, 2, 3, 4, 5, 4, 3, 4]); return 4
+
+Yuqoridag misolda argument sifatida kiritilayotgan array tarkibida 4 soni ko'p takrorlanganligi uchun 4'ni return qilmoqda.*/
+
+// function majorityElement(arr: number ){
+//     for(let i; i)
+
+// }
 
 /*Project standards:
 -Logging standards
@@ -15,18 +29,18 @@ console.log('Bugungi MIT-Task natijasi: ');
 Shunday function tuzing, unga string argument pass bolsin. Function ushbu agrumentdagi digitlarni yangi stringda return qilsin
 
 MASALAN: getDigits("m14i1t") return qiladi "141"*/
-function getDigits(str: string): string {
-    let result = "";
-    for (let char of str) {
-        if (!isNaN(Number(char)) && char !== " ") {
-            result += char;
-        }
-    }
-    return result;
+// function getDigits(str: string): string {
+//     let result = "";
+//     for (let char of str) {
+//         if (!isNaN(Number(char)) && char !== " ") {
+//             result += char;
+//         }
+//     }
+//     return result;
    
-}
+// }
 
-console.log(getDigits("i am 24 years old"));
+// console.log(getDigits("i am 24 years old"));
 
 
 
