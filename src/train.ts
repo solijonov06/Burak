@@ -9,11 +9,27 @@ takrorlangan raqamni topib qaytarsin.
 MASALAN: majorityElement([1, 2, 3, 4, 5, 4, 3, 4]); return 4
 
 Yuqoridag misolda argument sifatida kiritilayotgan array tarkibida 4 soni ko'p takrorlanganligi uchun 4'ni return qilmoqda.*/
+function majorityElement(arr: number[]): number {
+  const count: { [key: number]: number } = {};
 
-// function majorityElement(arr: number ){
-//     for(let i; i)
+  for (const num of arr) {
+    count[num] = (count[num] || 0) + 1;
+  }
 
-// }
+  let maxNum = arr[0];
+  let maxCount = 0;
+
+  for (const num in count) {
+    if (count[num] > maxCount) {
+      maxCount = count[num];
+      maxNum = Number(num);
+    }
+  }
+
+  return maxNum;
+}
+ 
+console.log(majorityElement([2,3,5,23,23,23,1,48,48,75,75,]))
 
 /*Project standards:
 -Logging standards
