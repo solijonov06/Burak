@@ -24,7 +24,7 @@ restarauntController.getSignup = (req: Request, res: Response) => {
         console.log("Error, get signup", err)
     }
 };
-
+    
 
 restarauntController.getLogin = (req: Request, res: Response) => {
     try{
