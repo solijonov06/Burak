@@ -1,5 +1,28 @@
 console.log("This is the train.ts file");
 console.log('Bugungi MIT-Task natijasi: ');
+
+
+
+
+
+function findLongestWord(str: string): string {
+  
+  let words = str.split(" ");
+
+  
+  let longestWord = "";
+
+ 
+  for (let word of words) {
+    if (word.length > longestWord.length) {
+      longestWord = word;
+    }
+  }
+
+  return longestWord;
+}
+
+console.log(findLongestWord("I came from Uzbekistan!")); // => "Uzbekistan!"
 /*
 TASK-I:
 
@@ -9,27 +32,27 @@ takrorlangan raqamni topib qaytarsin.
 MASALAN: majorityElement([1, 2, 3, 4, 5, 4, 3, 4]); return 4
 
 Yuqoridag misolda argument sifatida kiritilayotgan array tarkibida 4 soni ko'p takrorlanganligi uchun 4'ni return qilmoqda.*/
-function majorityElement(arr: number[]): number {
-  const count: { [key: number]: number } = {};
+// function majorityElement(arr: number[]): number {
+//   const count: { [key: number]: number } = {};
 
-  for (const num of arr) {
-    count[num] = (count[num] || 0) + 1;
-  }
+//   for (const num of arr) {
+//     count[num] = (count[num] || 0) + 1;
+//   }
 
-  let maxNum = arr[0];
-  let maxCount = 0;
+//   let maxNum = arr[0];
+//   let maxCount = 0;
 
-  for (const num in count) {
-    if (count[num] > maxCount) {
-      maxCount = count[num];
-      maxNum = Number(num);
-    }
-  }
+//   for (const num in count) {
+//     if (count[num] > maxCount) {
+//       maxCount = count[num];
+//       maxNum = Number(num);
+//     }
+//   }
 
-  return maxNum;
-}
+//   return maxNum;
+// }
  
-console.log(majorityElement([2,3,5,23,23,23,1,48,48,75,75,]))
+// console.log(majorityElement([2,3,5,23,23,23,1,48,48,75,75,]))
 
 /*Project standards:
 -Logging standards
