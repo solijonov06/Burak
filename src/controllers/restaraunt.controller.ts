@@ -1,7 +1,7 @@
 import  {Request, Response} from "express";
 import {T} from "../libs/types/common";
 import MemberService from "../models/Member.service"
-import { MemberInput,LoginInput } from "../libs/types/member";
+import { MemberInput,LoginInput, AdminRequest } from "../libs/types/member";
 import { MemberType } from "../libs/types/enums/member.enum";
 // RES: send & json & render & redirect & end
 
@@ -36,7 +36,7 @@ restarauntController.getLogin = (req: Request, res: Response) => {
 };
 
 
-restarauntController.processSignup = async (req: Request, res: Response) => {
+restarauntController.processSignup = async (req: AdminRequest, res: Response) => {
     try{
         console.log("processSignup");
       
@@ -46,8 +46,13 @@ restarauntController.processSignup = async (req: Request, res: Response) => {
 
        const result = await memberService.processSignup(newMember);
     //    sessions authentication
+    req.session.member = result; // sessionga saqlash
+    req.session.save(function (){
+        res.send(result)
 
-       res.send("DONE")
+    })
+
+       
     }catch(err) {
         console.log("Error, get processSignup", err);
         res.send(err)
@@ -55,7 +60,7 @@ restarauntController.processSignup = async (req: Request, res: Response) => {
 };
 
 
-restarauntController.processLogin = async (req: Request, res: Response) => {
+restarauntController.processLogin = async (req: AdminRequest, res: Response) => {
     try{
         console.log("processLogin");
         
@@ -64,6 +69,11 @@ restarauntController.processLogin = async (req: Request, res: Response) => {
 
         res.send(result);
         // sessions authentication
+            req.session.member = result; // sessionga saqlash
+    req.session.save(function (){
+        res.send(result)
+
+    })
        
     }catch(err) {
         console.log("Error, get processLogin", err);
