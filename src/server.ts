@@ -14,6 +14,7 @@ mongoose
        
         app.listen(PORT, function (){
             console.log( `Server is running on port http://localhost:${PORT}`);
+            console.info(`Admin project on http://localhost:${PORT}/admin \n `);
         })
     })
     .catch((err)=>{
