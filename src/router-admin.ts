@@ -9,8 +9,7 @@ routerAdmin
     .post("/login", restarauntController.processLogin);
 routerAdmin
     .get("/signup", restarauntController.getSignup)
-    .post("/check-me", restarauntController.checkAuthSesssion);
-
+    .post("/signup", restarauntController.processSignup);
 /*product */
 /*user */
 export default routerAdmin; // module.exports = router in commonjs

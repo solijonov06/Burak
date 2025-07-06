@@ -46,9 +46,9 @@ restarauntController.processSignup = async (req: AdminRequest, res: Response) =>
 
        const result = await memberService.processSignup(newMember);
     //    sessions authentication
-    req.session.member = result; // sessionga saqlash
-    req.session.save(function (){
-        res.send(result)
+       req.session.member = result; // sessionga saqlash
+       req.session.save(function (){
+       res.send(result)
 
     })
 
@@ -67,10 +67,10 @@ restarauntController.processLogin = async (req: AdminRequest, res: Response) => 
         const input: LoginInput = req.body,
          result = await memberService.processLogin(input);
 
-        res.send(result);
+     
         // sessions authentication
-            req.session.member = result; // sessionga saqlash
-    req.session.save(function (){
+        req.session.member = result; // sessionga saqlash
+        req.session.save(function (){
         res.send(result)
 
     })
