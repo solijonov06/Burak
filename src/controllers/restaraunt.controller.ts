@@ -3,6 +3,7 @@ import {T} from "../libs/types/common";
 import MemberService from "../models/Member.service"
 import { MemberInput,LoginInput, AdminRequest } from "../libs/types/member";
 import { MemberType } from "../libs/types/enums/member.enum";
+import { Message } from "../libs/error";
 // RES: send & json & render & redirect & end
 
 const restarauntController:  T ={};
@@ -86,7 +87,8 @@ restarauntController.checkAuthSesssion= async (req: AdminRequest, res: Response)
     try{
         console.log("checkAuthSesssion");
         
-       if(req.session?.member) res.send(req.session.member.memberNick);
+       if(req.session?.member) res.send(`<script>alert("${req.session.member.memberNick}")</script>`);
+         else res.send(`<script>alert("${Message.NOT_AUTHENTICATED}")</script>`);
        
     }catch(err) {
         console.log("Error, checkAuthSesssion", err);
