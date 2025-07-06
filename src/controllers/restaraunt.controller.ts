@@ -13,7 +13,8 @@ restarauntController.goHome = (req: Request, res: Response) => {
         console.log("goHome");
         res.render("home");
     }catch(err) {
-        console.log("Error, go home", err)
+        console.log("Error, go home", err);
+        res.redirect("/admin");
     }
 };
 
@@ -22,7 +23,8 @@ restarauntController.getSignup = (req: Request, res: Response) => {
         console.log("getSignup");
           res.render("signup");
     }catch(err) {
-        console.log("Error, get signup", err)
+        console.log("Error, get signup", err);
+        res.redirect("/admin");
     }
 };
     
@@ -32,7 +34,8 @@ restarauntController.getLogin = (req: Request, res: Response) => {
         console.log("getLogin");
            res.render("login");
     }catch(err) {
-        console.log("Error, get login", err)
+        console.log("Error, get login", err);
+        res.redirect("/admin");
     }
 };
 
@@ -56,7 +59,9 @@ restarauntController.processSignup = async (req: AdminRequest, res: Response) =>
        
     }catch(err) {
         console.log("Error, get processSignup", err);
-        res.send(err)
+            const message = err instanceof Error ? err.message : Message.SOMETHING_WENT_WRONG;
+        res.send(`<script>alert("${message}"); window.location.replace("admin/signup")</script>`);
+    
     }
 };
 
@@ -78,9 +83,27 @@ restarauntController.processLogin = async (req: AdminRequest, res: Response) => 
        
     }catch(err) {
         console.log("Error, get processLogin", err);
-        res.send(err);
+        const message = err instanceof Error ? err.message : Message.SOMETHING_WENT_WRONG;
+        res.send(`<script>alert("${message}"); window.location.replace("admin/login")</script>`);
     }
 };
+
+restarauntController.logout = async (req: AdminRequest, res: Response) => {
+    try{
+        console.log("logout");
+        req.session.destroy(function (){
+            res.redirect("/admin");
+        })
+        
+
+    
+       
+    }catch(err) {
+        console.log("Error, logout", err);
+        res.redirect("/admin");
+    }
+};
+
 
 
 restarauntController.checkAuthSesssion= async (req: AdminRequest, res: Response) => {

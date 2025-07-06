@@ -1,6 +1,19 @@
 console.log("This is the train.ts file");
 console.log('Bugungi MIT-Task natijasi: ');
 
+/*Project standards:
+-Logging standards
+-Naming standards:
+    function, variable, method => CAMEL
+    class                      =>PASCAL
+    folder, file               =>KEBAB
+    css                        =>SNAKE */
+
+    /*  
+    request join
+    self-destroy
+    */
+
 
 
 
@@ -54,13 +67,7 @@ Yuqoridag misolda argument sifatida kiritilayotgan array tarkibida 4 soni ko'p t
  
 // console.log(majorityElement([2,3,5,23,23,23,1,48,48,75,75,]))
 
-/*Project standards:
--Logging standards
--Naming standards:
-    function, variable, method => CAMEL
-    class                      =>PASCAL
-    folder, file               =>KEBAB
-    css                        =>SNAKE */
+
 
 
 /*TASK HH2-TASK: 

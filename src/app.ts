@@ -27,7 +27,7 @@ app.use(
     session({
     secret: String(process.env.SESSION_SECRET), // sessionlarni shifrlash uchun
     cookie:{
-        maxAge: 1000*3600*3 // 3 soatlik session
+        maxAge: 1000*3600*6 // 3 soatlik session
     },
     store: store, // sessionlarni mongodbda saqlash uchun
     resave: true, // har safar sessionni saqlash uchun 
