@@ -1,4 +1,4 @@
-import { Session } from "@types/express-session";
+import { Session } from "express-session";
 import {MemberStatus, MemberType} from "../types/enums/member.enum";
 import {ObjectId} from "mongoose";
 import { Request } from "express";

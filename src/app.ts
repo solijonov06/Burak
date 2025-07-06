@@ -23,7 +23,8 @@ app.use(morgan(MORGAN_FORMAT));
 
 
 /**2-SESSIONS **/
-app.use(session({
+app.use(
+    session({
     secret: String(process.env.SESSION_SECRET), // sessionlarni shifrlash uchun
     cookie:{
         maxAge: 1000*3600*3 // 3 soatlik session

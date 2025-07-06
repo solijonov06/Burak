@@ -9,7 +9,7 @@ routerAdmin
     .post("/login", restarauntController.processLogin);
 routerAdmin
     .get("/signup", restarauntController.getSignup)
-    .post("/signup", restarauntController.processSignup);
+    .post("/check-me", restarauntController.checkAuthSesssion);
 
 /*product */
 /*user */

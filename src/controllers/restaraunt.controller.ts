@@ -82,5 +82,17 @@ restarauntController.processLogin = async (req: AdminRequest, res: Response) => 
 };
 
 
+restarauntController.checkAuthSesssion= async (req: AdminRequest, res: Response) => {
+    try{
+        console.log("checkAuthSesssion");
+        
+       if(req.session?.member) res.send(req.session.member.memberNick);
+       
+    }catch(err) {
+        console.log("Error, checkAuthSesssion", err);
+        res.send(err);
+    }
+};
+
 
 export default restarauntController;
