@@ -14,28 +14,42 @@ console.log('Bugungi MIT-Task natijasi: ');
     self-destroy
     */
 
+/*TASK K: 
+
+Shunday function yozing, u string qabul qilsin va string ichidagi unli harflar sonini qaytarsin.
+MASALAN: countVowels("string") return 1;*/
+function countVowels(str: string): number {
+  const vowels = "aeiouAEIOU"; 
+  let count = 0;
+  for (let char of str) {
+    if (vowels.includes(char)) {
+      count++;
+    }
+  }  
+  return count;
+}
+console.log(countVowels("I came from Uzbekistan!")); // => 8
 
 
 
-
-function findLongestWord(str: string): string {
+// function findLongestWord(str: string): string {
   
-  let words = str.split(" ");
+//   let words = str.split(" ");
 
   
-  let longestWord = "";
+//   let longestWord = "";
 
  
-  for (let word of words) {
-    if (word.length > longestWord.length) {
-      longestWord = word;
-    }
-  }
+//   for (let word of words) {
+//     if (word.length > longestWord.length) {
+//       longestWord = word;
+//     }
+//   }
 
-  return longestWord;
-}
+//   return longestWord;
+// }
 
-console.log(findLongestWord("I came from Uzbekistan!")); // => "Uzbekistan!"
+// console.log(findLongestWord("I came from Uzbekistan!")); // => "Uzbekistan!"
 /*
 TASK-I:
 
