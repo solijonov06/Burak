@@ -13,11 +13,23 @@ routerAdmin
     .post("/signup", restarauntController.processSignup);
 routerAdmin.get("/logout", restarauntController.logout);
 routerAdmin.get("/check-me", restarauntController.checkAuthSesssion);
+
+
 /*product */
 routerAdmin.get("/product/all",
 restarauntController.verifyRestaraunt,    
-productController.getAllProducts);
-routerAdmin.post("/product/create", productController.createNewProduct);
-routerAdmin.post("/product/:id", productController.updateChosenProduct);
+productController.getAllProducts
+);
+routerAdmin.post("/product/create",
+    restarauntController.verifyRestaraunt,
+     productController.createNewProduct
+
+);
+routerAdmin.post("/product/:id", 
+    restarauntController.verifyRestaraunt,
+    productController.updateChosenProduct
+);
+
+
 /*user */
 export default routerAdmin; // module.exports = router in commonjs
