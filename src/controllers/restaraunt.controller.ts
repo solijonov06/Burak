@@ -119,5 +119,20 @@ restarauntController.checkAuthSesssion= async (req: AdminRequest, res: Response)
     }
 };
 
+restarauntController.verifyRestaraunt = (
+    req: AdminRequest, res: Response, next: Function
+) =>{
+   
+        console.log("verifyRestaraunt");
+        if(req.session?.member?.memberType === MemberType.RESTARAUNT){
+           req.member = req.session.member
+            next();
+        }else{
+          const message = Message.NOT_AUTHENTICATED;
+          res.send(`<script>alert("${message}"); window.location.replace("/admin/login")</script>`);
+        }
+ 
+};
+
 
 export default restarauntController;

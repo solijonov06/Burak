@@ -14,7 +14,9 @@ routerAdmin
 routerAdmin.get("/logout", restarauntController.logout);
 routerAdmin.get("/check-me", restarauntController.checkAuthSesssion);
 /*product */
-routerAdmin.get("/product/all", productController.getAllProducts);
+routerAdmin.get("/product/all",
+restarauntController.verifyRestaraunt,    
+productController.getAllProducts);
 routerAdmin.post("/product/create", productController.createNewProduct);
 routerAdmin.post("/product/:id", productController.updateChosenProduct);
 /*user */

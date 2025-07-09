@@ -7,6 +7,7 @@ import { MORGAN_FORMAT } from "./libs/types/config";
 
 import session from "express-session";
 import ConnectMongoDB from "connect-mongodb-session"; // sessionlarni mongodbda saqlash
+import { T } from "./libs/types/common";
 
 const MongoDBStore = ConnectMongoDB(session);
 const store = new MongoDBStore({
@@ -34,7 +35,13 @@ app.use(
     saveUninitialized: true 
 
 
-}))
+}));
+
+app.use((req, res, next)=>{
+    const sessionInstance = req.session as T;
+    res.locals.member = sessionInstance.member; // sessiondagi memberni res.locals ga saqlash
+    next();
+})
 
 /**3-VIEWS **/
 app.set("views", path.join(__dirname, "views"));
