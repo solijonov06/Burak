@@ -1,6 +1,7 @@
 import express from "express";
 const routerAdmin = express.Router(); 
 import restarauntController from "./controllers/restaraunt.controller"
+import productController from "./controllers/product.controller";
 
 /*Restarauunt */
 routerAdmin.get("/", restarauntController.goHome);
@@ -13,5 +14,8 @@ routerAdmin
 routerAdmin.get("/logout", restarauntController.logout);
 routerAdmin.get("/check-me", restarauntController.checkAuthSesssion);
 /*product */
+routerAdmin.get("/product/all", productController.getAllProducts);
+routerAdmin.post("/product/create", productController.createNewProduct);
+routerAdmin.post("/product/:id", productController.updateChosenProduct);
 /*user */
 export default routerAdmin; // module.exports = router in commonjs
