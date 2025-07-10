@@ -24,7 +24,7 @@ productController.getAllProducts
 routerAdmin.post("/product/create",
     restarauntController.verifyRestaraunt,
     // uploadProductImage.single("productImage"),
-    makeUploader("products").single("productImage"),
+    makeUploader("products").array("productImages",5),
      productController.createNewProduct
 
 );
