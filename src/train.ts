@@ -14,21 +14,39 @@ console.log('Bugungi MIT-Task natijasi: ');
     self-destroy
     */
 
+/*TASK L: 
+
+Shunday function yozing, u string qabul qilsin va string ichidagi hamma sozlarni chappasiga yozib va sozlar ketma-ketligini buzmasdan stringni qaytarsin.
+MASALAN: reverseSentence("we like coding!") return "ew ekil gnidoc";*/ 
+
+
+function reverseSentence(s: string): string {
+  const words: string[] = s.split(' ');
+  const reversedWords: string[] = words.map(word => word.split('').reverse().join(''));
+  return reversedWords.join(' ');
+}
+
+// Test
+console.log(reverseSentence("we like coding!")); // chiqishi: "ew ekil !gnidoc"
+
+
+
+
 /*TASK K: 
 
 Shunday function yozing, u string qabul qilsin va string ichidagi unli harflar sonini qaytarsin.
 MASALAN: countVowels("string") return 1;*/
-function countVowels(str: string): number {
-  const vowels = "aeiouAEIOU"; 
-  let count = 0;
-  for (let char of str) {
-    if (vowels.includes(char)) {
-      count++;
-    }
-  }  
-  return count;
-}
-console.log(countVowels("I came from Uzbekistan!")); // => 8
+// function countVowels(str: string): number {
+//   const vowels = "aeiouAEIOU"; 
+//   let count = 0;
+//   for (let char of str) {
+//     if (vowels.includes(char)) {
+//       count++;
+//     }
+//   }  
+//   return count;
+// }
+// console.log(countVowels("I came from Uzbekistan!")); // => 8
 
 
 
