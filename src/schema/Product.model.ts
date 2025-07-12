@@ -26,6 +26,7 @@ export enum ProductStatus {
 export enum ProductCollection {
   COLLECTION1 = "COLLECTION1",
   COLLECTION2 = "COLLECTION2",
+  DISH = "DISH",
   // add other collections as needed
 }
 
@@ -39,7 +40,7 @@ const productSchema = new Schema(
 
     productCollection: {
       type: String,
-      enum: Object.values(ProductCollection),
+      enum: ProductCollection,
       required: true,
     },
 
@@ -68,7 +69,7 @@ const productSchema = new Schema(
     },
     productDesc: {
       type: String,
-      required: true,
+  
     },
     productVolume: {
       type: String,
