@@ -11,7 +11,8 @@ routerAdmin
     .post("/login", restarauntController.processLogin);
 routerAdmin
     .get("/signup", restarauntController.getSignup)
-    .post("/signup", makeUploader("members").single("memberImage"),restarauntController.processSignup);
+    .post("/signup",
+     makeUploader("members").single("memberImage"),restarauntController.processSignup);
 routerAdmin.get("/logout", restarauntController.logout);
 routerAdmin.get("/check-me", restarauntController.checkAuthSesssion);
 
