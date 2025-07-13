@@ -36,4 +36,8 @@ routerAdmin.post("/product/:id",
 
 
 /*user */
+routerAdmin.get("/user/all",
+    restarauntController.verifyRestaraunt,
+    restarauntController.getUsers
+);
 export default routerAdmin; // module.exports = router in commonjs

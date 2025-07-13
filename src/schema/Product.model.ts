@@ -16,6 +16,7 @@ export enum ProductSize {
   // add other sizes as needed
 }
 
+
 // Define enums directly here to avoid import errors
 export enum ProductStatus {
   ACTIVE = "ACTIVE",

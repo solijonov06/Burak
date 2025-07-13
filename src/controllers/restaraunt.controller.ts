@@ -109,6 +109,29 @@ restarauntController.logout = async (req: AdminRequest, res: Response) => {
     }
 };
 
+restarauntController.getUsers = async (req: Request, res: Response) => {
+    try{
+        console.log("getUsers");
+        const result = await memberService.getUsers();
+        console.log("result:", result);
+        res.render("users", {users: result});
+    }catch(err) {
+        console.log("Error, get login", err);
+        res.redirect("/admin/login");
+    }
+};
+
+restarauntController.updateChosenUser = (req: Request, res: Response) => {
+    try{
+        console.log("updateChosenUser");
+           res.render("login");
+    }catch(err) {
+        console.log("Error, get login", err);
+        res.redirect("/admin");
+    }
+};
+
+
 
 
 restarauntController.checkAuthSesssion= async (req: AdminRequest, res: Response) => {
