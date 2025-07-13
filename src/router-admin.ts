@@ -40,4 +40,8 @@ routerAdmin.get("/user/all",
     restarauntController.verifyRestaraunt,
     restarauntController.getUsers
 );
+routerAdmin.post("/user/edit",
+    restarauntController.verifyRestaraunt,
+    restarauntController.updateChosenUser
+);
 export default routerAdmin; // module.exports = router in commonjs
