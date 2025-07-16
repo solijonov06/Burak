@@ -1,6 +1,20 @@
 console.log("This is the train.ts file");
 console.log('Bugungi MIT-Task natijasi: ');
 
+
+/*TASK N:
+
+Shunday function yozing, u string qabul qilsin va string palindrom yani togri oqilganda ham, orqasidan oqilganda ham bir hil oqiladigan soz ekanligini aniqlab boolean qiymat qaytarsin.
+
+MASALAN: palindromCheck("dad") return true;  palindromCheck("son") return false;*/
+function palindromCheck(str: string): boolean {
+    const cleanedStr = str.replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
+    const reversedStr = cleanedStr.split('').reverse().join('');
+    return cleanedStr === reversedStr;
+}
+
+console.log(palindromCheck("dad")); // true
+console.log(palindromCheck("son")); // false
 /**TASK M: 
 
 Shunday function yozing, u raqamlardan tashkil
@@ -12,13 +26,13 @@ MASALAN: getSquareNumbers([1, 2, 3]) return [{number: 1, square: 1},
 
 
 
-function getSquareNumbers(arr: number[]) {
-  return arr.map(num => ({
-    number: num,
-    square: num * num
-  }));
-}
-console.log(getSquareNumbers([1, 2, 3, 4, 5]));
+// function getSquareNumbers(arr: number[]) {
+//   return arr.map(num => ({
+//     number: num,
+//     square: num * num
+//   }));
+// }
+// console.log(getSquareNumbers([1, 2, 3, 4, 5]));
 
 /*Project standards:
 -Logging standards

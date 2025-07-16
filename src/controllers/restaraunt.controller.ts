@@ -74,6 +74,7 @@ restarauntController.processSignup = async (req: AdminRequest, res: Response) =>
 restarauntController.processLogin = async (req: AdminRequest, res: Response) => {
     try{
         console.log("processLogin");
+        console.log("req.body:", req.body);
         
         const input: LoginInput = req.body,
          result = await memberService.processLogin(input);
@@ -89,7 +90,7 @@ restarauntController.processLogin = async (req: AdminRequest, res: Response) => 
     }catch(err) {
         console.log("Error, get processLogin", err);
         const message = err instanceof Error ? err.message : Message.SOMETHING_WENT_WRONG;
-        res.send(`<script>alert("${message}"); window.location.replace("admin/login")</script>`);
+        res.send(`<script>alert("${message}"); window.location.replace("/admin/login")</script>`);
     }
 };
 
