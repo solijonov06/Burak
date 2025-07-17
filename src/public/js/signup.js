@@ -18,7 +18,7 @@ console.log("Signup frontend javascript file");
       .attr("src", URL.createObjectURL(uploadFile))
       .addClass("success");
       }
-         filename = $(this).files[0].name;
+         filename = this.files[0].name;
     }
       $(this).siblings(".upload-name").val(filename);
     }
