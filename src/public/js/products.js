@@ -20,6 +20,28 @@ $(function() {
         $(".dish-container").slideToggle(100);
         $("#process-btn").css("display", "flex");
     }); 
+
+    $(".new-product-status").on("change", async function(e) {
+        const id = e.target.id;
+        const productStatus = $(`#${id}.new-product-status`).val();
+        console.log("id", id);
+        console.log("productStatus", productStatus);
+
+        try {
+            const response = await axios.post(`/admin/product/${id}`, {
+                productStatus: productStatus
+            });
+            console.log("Response:", response);
+            const result = response.data;
+            if (result.data) {
+                console.log("Status updated successfully");
+                $(".new-product-status").blur();
+            } else alert("Status update failed");
+        } catch (error) {
+            console.error("Error updating status:", error);
+            alert("An error occurred while updating the status.");
+        }
+    });
 });
 
 
