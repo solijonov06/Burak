@@ -1,6 +1,19 @@
 console.log("This is the train.ts file");
 console.log('Bugungi MIT-Task natijasi: ');
 
+// TASK P:
+
+// Parametr sifatida yagona object qabul qiladigan function yozing.
+// Qabul qilingan objectni nested array sifatida convert qilib qaytarsin
+
+// MASALAN: objectToArray( {a: 10, b: 20}) return [['a', 10], ['b', 20]]
+
+function objectToArray(obj: { [key: string]: any }): [string, any][] {
+  return Object.entries(obj);
+}
+console.log(objectToArray({ a: 10, b: 20 }));
+
+
 // TASK O:
 
 // Shunday function yozing va u har xil qiymatlardan iborat array qabul qilsin.
@@ -12,18 +25,18 @@ console.log('Bugungi MIT-Task natijasi: ');
 // Qolganlari nested bo'lib yoki type'lari number emas.
 
 
-function calculateSumOfNumbers(arr: any[]): number {
-  let sum = 0;
+// function calculateSumOfNumbers(arr: any[]): number {
+//   let sum = 0;
 
-  for (const item of arr) {
-    if (typeof item === "number") {
-      sum += item;
-    }
-  }
+//   for (const item of arr) {
+//     if (typeof item === "number") {
+//       sum += item;
+//     }
+//   }
 
-  return sum;
-}
-console.log(calculateSumOfNumbers([10, "10", {son: 10}, true, 35])); // 45
+//   return sum;
+// }
+// console.log(calculateSumOfNumbers([10, "10", {son: 10}, true, 35])); // 45
 
 /*TASK N:
 
