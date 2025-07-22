@@ -1,17 +1,38 @@
 console.log("This is the train.ts file");
 console.log('Bugungi MIT-Task natijasi: ');
+/**TASK Q:
 
-// TASK P:
+Shunday function yozing, u 2 ta parametrga ega bo'lib
+birinchisi object, ikkinchisi string bo'lsin.
+Agar qabul qilinayotgan ikkinchi string, objectning
+biror bir propertysiga mos kelsa, 'true', aks holda mos kelmasa 'false' qaytarsin.
 
-// Parametr sifatida yagona object qabul qiladigan function yozing.
-// Qabul qilingan objectni nested array sifatida convert qilib qaytarsin
+MASALAN: hasProperty({ name: "BMW", model: "M3" }, "model"); return true;
+Ushbu misolda, 'model' string, objectning propertysiga mos kelganligi uchun 'true' natijani qaytarmoqda
 
-// MASALAN: objectToArray( {a: 10, b: 20}) return [['a', 10], ['b', 20]]
+MASALAN: hasProperty({ name: "BMW", model: "M3" }, "year"); return false;
+Ushbu misolda, ikkinchi argument sifatida berilayotgan 'year' objectning
+propertysida mavjud bo'lmaganligi uchun 'false' natijani qaytarmoqda. */
 
-function objectToArray(obj: { [key: string]: any }): [string, any][] {
-  return Object.entries(obj);
+function hasProperty(obj: object, key: string): boolean {
+  return key in obj;
 }
-console.log(objectToArray({ a: 10, b: 20 }));
+
+
+console.log(hasProperty({ name: "BMW", model: "M3" }, "model")); // true
+console.log(hasProperty({ name: "BMW", model: "M3" }, "year"));  // false
+
+// // TASK P:
+
+// // Parametr sifatida yagona object qabul qiladigan function yozing.
+// // Qabul qilingan objectni nested array sifatida convert qilib qaytarsin
+
+// // MASALAN: objectToArray( {a: 10, b: 20}) return [['a', 10], ['b', 20]]
+
+// function objectToArray(obj: { [key: string]: any }): [string, any][] {
+//   return Object.entries(obj);
+// }
+// console.log(objectToArray({ a: 10, b: 20 }));
 
 
 // TASK O:
