@@ -1,5 +1,32 @@
 console.log("This is the train.ts file");
 console.log('Bugungi MIT-Task natijasi: ');
+/*TASK R
+
+Shunday function yozing, u string parametrga ega bo'lsin.
+Agar argument sifatida berilayotgan string, "1 + 2" bo'lsa,
+string ichidagi sonlarin yig'indisni hisoblab, number holatida qaytarsin
+
+MASALAN: calculate("1 + 3"); return 4;
+1 + 3 = 4, shu sababli 4 natijani qaytarmoqda. */
+
+function calculate(expression: string): number {
+
+  const parts = expression.split('+').map(part => part.trim());
+
+
+  const numbers = parts.map(Number);
+
+
+  return numbers[0] + numbers[1];
+}
+
+
+console.log(calculate("1 + 3")); // 4
+console.log(calculate("10 + 25")); // 35
+
+
+
+
 /**TASK Q:
 
 Shunday function yozing, u 2 ta parametrga ega bo'lib
@@ -14,13 +41,13 @@ MASALAN: hasProperty({ name: "BMW", model: "M3" }, "year"); return false;
 Ushbu misolda, ikkinchi argument sifatida berilayotgan 'year' objectning
 propertysida mavjud bo'lmaganligi uchun 'false' natijani qaytarmoqda. */
 
-function hasProperty(obj: object, key: string): boolean {
-  return key in obj;
-}
+// function hasProperty(obj: object, key: string): boolean {
+//   return key in obj;
+// }
 
 
-console.log(hasProperty({ name: "BMW", model: "M3" }, "model")); // true
-console.log(hasProperty({ name: "BMW", model: "M3" }, "year"));  // false
+// console.log(hasProperty({ name: "BMW", model: "M3" }, "model")); // true
+// console.log(hasProperty({ name: "BMW", model: "M3" }, "year"));  // false
 
 // // TASK P:
 
