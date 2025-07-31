@@ -1,5 +1,30 @@
 console.log("This is the train.ts file");
 console.log('Bugungi MIT-Task natijasi: ');
+// TASK U
+
+// Shunday function tuzing, uni number parametri bo'lsin.
+// Va bu function berilgan parametrgacha, 0'dan boshlab
+// oraliqda nechta toq sonlar borligini aniqlab return qilsi.
+
+// MASALAN: sumOdds(9) return 4; sumOdds(11) return 5;
+
+// Yuqoridagi birinchi misolda, argument sifatida, 9 berilmoqda.
+// Va 0'dan boshlab sanaganda 9'gacha 4'ta toq son mavjud. 
+// Keyingi namunada ham xuddi shunday xolat takrorlanmoqda.    
+
+function sumOdds(n: number): number {
+  let count = 0;
+  for (let i = 1; i < n; i += 2) {
+    count++;
+  }
+  return count;
+}
+
+// Testlar
+console.log(sumOdds(9));  // 4 → 1, 3, 5, 7
+console.log(sumOdds(11)); // 5 → 1, 3, 5, 7, 9
+
+
 /*TASK R
 
 Shunday function yozing, u string parametrga ega bo'lsin.
@@ -16,13 +41,13 @@ Shunday function yozing, u numberlardan tashkil topgan array qabul qilsin va osh
 MASALAN: missingNumber([3, 0, 1]) return 2*/
 
 
-function missingNumber(nums: number[]): number {
-  const n = nums.length;
-  const expectedSum = (n * (n + 1)) / 2;
-  const actualSum = nums.reduce((acc, val) => acc + val, 0);
-  return expectedSum - actualSum;
-}
-console.log(missingNumber([3, 0, 1])); // 2
+// function missingNumber(nums: number[]): number {
+//   const n = nums.length;
+//   const expectedSum = (n * (n + 1)) / 2;
+//   const actualSum = nums.reduce((acc, val) => acc + val, 0);
+//   return expectedSum - actualSum;
+// }
+// console.log(missingNumber([3, 0, 1])); // 2
 
 // function calculate(expression: string): number {
 
