@@ -4,7 +4,10 @@ import jwt from "jsonwebtoken";
 import Errors, {HttpCode, Message} from "../libs/error";
 
 class AuthService{
-    constructor(){}
+    private readonly secretToken;
+    constructor(){
+        this.secretToken = process.env.SECRET_TOKEN as string;
+    }
 
     public createToken(payload: Member){
         return new Promise((resolve, reject)=>{
@@ -18,7 +21,7 @@ class AuthService{
                 (err, token)=> {
                     if (err)
                         reject(
-                    new Errors(HttpCode.UNAOTHORIZED, Message.TOKEN_CREATION_FAILED)
+                    new Errors(HttpCode.UNAUTHORIZED, Message.TOKEN_CREATION_FAILED)
                 );
                 else resolve(token as string);
                 }
@@ -26,6 +29,16 @@ class AuthService{
             )
         })
     }
-}
+
+    public async checkAuth(token: string): Promise<Member>{
+        const result: Member =(await jwt.verify(
+            token,
+            this.secretToken
+        )) as Member;
+        console.log(`-------[AUTH] memberNick: ${result.memberNick}----`);
+        return result;
+    }
+    }
+
 
 export default AuthService;

@@ -49,7 +49,7 @@ class MemberService{
         // const isMatch = input.memberPassword === member.memberPassword;
         console.log("isMatch", isMatch);
         if(!isMatch){
-            throw new Errors(HttpCode.UNAOTHORIZED, Message.WRONG_PASSWORD)
+            throw new Errors(HttpCode.UNAUTHORIZED, Message.WRONG_PASSWORD)
         }
 
 
@@ -103,7 +103,7 @@ class MemberService{
         // const isMatch = input.memberPassword === member.memberPassword;
         console.log("isMatch", isMatch);
         if(!isMatch){
-            throw new Errors(HttpCode.UNAOTHORIZED, Message.WRONG_PASSWORD)
+            throw new Errors(HttpCode.UNAUTHORIZED, Message.WRONG_PASSWORD)
         }
 
 
