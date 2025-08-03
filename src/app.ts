@@ -4,6 +4,7 @@ import routerAdmin from "./router-admin";
 import router from "./router";
 import morgan from "morgan";
 import { MORGAN_FORMAT } from "./libs/utils/config";
+import cookieParser from "cookie-parser";
 
 import session from "express-session";
 import ConnectMongoDB from "connect-mongodb-session"; // sessionlarni mongodbda saqlash
@@ -20,6 +21,7 @@ const app =express();
 app.use(express.static(path.join(__dirname, "public"))) // faylorlarni public papkasidan olish uchun
 app.use(express.urlencoded({extended: true})); // tradidional API uchun
 app.use(express.json()); // rest API uchun
+app.use(cookieParser())
 app.use(morgan(MORGAN_FORMAT));
 
 
