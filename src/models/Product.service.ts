@@ -2,7 +2,7 @@ import { HttpCode } from "../libs/error";
 import ProductModel from "../schema/Product.model";
 import { Message } from "../libs/error";
 import { Product, ProductInput, ProductUpdateInput } from "../libs/types/product";
-import { shapeIntoMongooseObjectId } from "../libs/types/config";
+import { shapeIntoMongooseObjectId } from "../libs/utils/config";
 
 class ProductService{
     productModel: any;

@@ -4,7 +4,7 @@ import Errors, { HttpCode } from "../libs/error";
 import { Message } from "../libs/error";
 import { MemberStatus, MemberType } from "../libs/types/enums/member.enum";
 import * as bcrypt from "bcryptjs";
-import { shapeIntoMongooseObjectId } from "../libs/types/config";
+import { shapeIntoMongooseObjectId } from "../libs/utils/config";
 
 class MemberService{
     private readonly memberModel;

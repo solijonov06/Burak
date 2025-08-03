@@ -3,7 +3,7 @@ import path from "path";
 import routerAdmin from "./router-admin";
 import router from "./router";
 import morgan from "morgan";
-import { MORGAN_FORMAT } from "./libs/types/config";
+import { MORGAN_FORMAT } from "./libs/utils/config";
 
 import session from "express-session";
 import ConnectMongoDB from "connect-mongodb-session"; // sessionlarni mongodbda saqlash
