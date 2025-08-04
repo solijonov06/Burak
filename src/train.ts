@@ -1,5 +1,35 @@
 console.log("This is the train.ts file");
 console.log('Bugungi MIT-Task natijasi: ');
+/**TASK W
+
+Shunday function yozing, u o'ziga parametr sifatida
+yagona array va number qabul qilsin. Siz tuzgan function
+arrayni numberda berilgan uzunlikda kesib bo'laklarga
+ajratgan holatida qaytarsin.
+MASALAN: chunkArray([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 3);
+return [[1, 2, 3], [4, 5, 6], [7, 8, 9], [10]];
+
+Yuqoridagi namunada berilayotgan array ikkinchi parametr 3'ga
+asoslanib 3 bo'lakga bo'linib qaytmoqda. Qolgani esa o'z holati qolyapti */
+
+
+function chunkArray<T>(array: T[], size: number): T[][] {
+  const result: T[][] = [];
+
+  for (let i = 0; i < array.length; i += size) {
+    result.push(array.slice(i, i + size));
+  }
+
+  return result;
+}
+
+// Test qilish
+const test = chunkArray([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 3);
+console.log(test); // [[1,2,3],[4,5,6],[7,8,9],[10]]
+
+
+
+
 /*
  TASK V
 
@@ -13,18 +43,18 @@ Yuqoridagi misolda, 'hello' so'zi tarkibida
 qatnashgan harflar necha marotaba takrorlangini bilan
 object sifatida qaytarilmoqda.*/
 
-function countChars(str: string): Record<string, number> {
-  const result: Record<string, number> = {};
+// function countChars(str: string): Record<string, number> {
+//   const result: Record<string, number> = {};
 
-  for (const char of str) {
-    result[char] = (result[char] || 0) + 1;
-  }
+//   for (const char of str) {
+//     result[char] = (result[char] || 0) + 1;
+//   }
 
-  return result;
-}
+//   return result;
+// }
 
-// Misol
-console.log(countChars("hello")); // { h: 1, e: 1, l: 2, o: 1 }
+// // Misol
+// console.log(countChars("hello")); // { h: 1, e: 1, l: 2, o: 1 }
 
 
 // TASK U
