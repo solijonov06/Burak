@@ -79,6 +79,17 @@ public async updateMember (member: Member,
     return result;
     
 };
+
+
+    public async getTopUsers(): Promise<Member[]>{
+        const result = await this.memberModel
+        .find({ memberStatus: MemberStatus.ACTIVE, memberPoints: {$gte: 1}})
+        .sort({memberPoints: -1})
+        .limit(4)
+        .exec();
+        if(!result) throw new Errors(HttpCode.NOT_FOUND, Message.NO_DATA_IS_FOUND);
+        return result;
+    }
     
 
     /*ssr*/
