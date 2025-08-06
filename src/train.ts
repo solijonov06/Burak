@@ -1,5 +1,64 @@
 console.log("This is the train.ts file");
 console.log('Bugungi MIT-Task natijasi: ');
+/*TASK X
+
+Shunday function yozing, uni object va string parametrlari bo'lsin.
+Bu function, birinchi object parametri tarkibida, kalit sifatida ikkinchi string parametri
+necha marotaba takrorlanganlini sanab qaytarsin.
+
+Eslatma => Nested object'lar ham sanalsin
+
+MASALAN: countOccurrences({model: 'Bugatti', steer: {model: 'HANKOOK', size: 30}}, 'model') return 2
+
+Yuqoridagi misolda, birinchi argument object, ikkinchi argument 'model'.
+Funktsiya, shu ikkinchi argument 'model', birinchi argument object
+tarkibida kalit sifatida 2 marotaba takrorlanganligi uchun 2 soni return qilmoqda*/ 
+
+function countOccurrences(obj: any, targetKey: string): number {
+    let count = 0;
+
+    function recursiveCount(current: any) {
+        if (typeof current === 'object' && current !== null) {
+            for (const key in current) {
+                if (key === targetKey) {
+                    count++;
+                }
+                recursiveCount(current[key]);
+            }
+        }
+    }
+
+    recursiveCount(obj);
+    return count;
+}
+
+// Test
+const data = {
+    model: 'Bugatti',
+    steer: {
+        model: 'HANKOOK',
+        size: 30
+    }
+};
+
+console.log(countOccurrences(data, 'model')); // Output: 2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /**TASK W
 
 Shunday function yozing, u o'ziga parametr sifatida
@@ -13,19 +72,19 @@ Yuqoridagi namunada berilayotgan array ikkinchi parametr 3'ga
 asoslanib 3 bo'lakga bo'linib qaytmoqda. Qolgani esa o'z holati qolyapti */
 
 
-function chunkArray<T>(array: T[], size: number): T[][] {
-  const result: T[][] = [];
+// function chunkArray<T>(array: T[], size: number): T[][] {
+//   const result: T[][] = [];
 
-  for (let i = 0; i < array.length; i += size) {
-    result.push(array.slice(i, i + size));
-  }
+//   for (let i = 0; i < array.length; i += size) {
+//     result.push(array.slice(i, i + size));
+//   }
 
-  return result;
-}
+//   return result;
+// }
 
-// Test qilish
-const test = chunkArray([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 3);
-console.log(test); // [[1,2,3],[4,5,6],[7,8,9],[10]]
+// // Test qilish
+// const test = chunkArray([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 3);
+// console.log(test); // [[1,2,3],[4,5,6],[7,8,9],[10]]
 
 
 
