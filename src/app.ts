@@ -19,6 +19,7 @@ const store = new MongoDBStore({
 /**1-ENTRANCE **/
 const app =express();
 app.use(express.static(path.join(__dirname, "public"))) // faylorlarni public papkasidan olish uchun
+app.use("/uploads", express.static("./uploads")); // faylorlarni uploads papkasidan olish uchun
 app.use(express.urlencoded({extended: true})); // tradidional API uchun
 app.use(express.json()); // rest API uchun
 app.use(cookieParser())
