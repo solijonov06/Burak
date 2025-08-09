@@ -21,6 +21,7 @@ export enum ProductSize {
 export enum ProductStatus {
   ACTIVE = "ACTIVE",
   PAUSE = "PAUSE",
+  PROCESS= "PROCESS",
   // add other statuses as needed
 }
 
