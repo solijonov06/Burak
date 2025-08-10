@@ -4,6 +4,7 @@ import { Message } from "../libs/error";
 import { Product, ProductInput, ProductInquiry, ProductUpdateInput } from "../libs/types/product";
 import { shapeIntoMongooseObjectId } from "../libs/utils/config";
 import { T } from "../libs/types/common";
+import {ObjectId} from "mongoose";
 
 class ProductService{
     productModel: any;
@@ -39,6 +40,24 @@ class ProductService{
 
         return result;
     }
+
+public async getProduct (
+    memberId: ObjectId | null,
+    id: String
+): Promise<Product>{
+    const productId = shapeIntoMongooseObjectId(id);
+
+    let result = await this.productModel
+    .findOne({
+        _id: productId,
+        productStatus: ProductStatus.PROCESS,
+    })
+    .exec();
+    if(!result) throw new Errors(HttpCode.NOT_FOUND, Message.NO_DATA_IS_FOUND)
+
+   return result;     
+}
+
     /*BSSR */
 public async getAllProducts(
       ): Promise<Product[]>{
