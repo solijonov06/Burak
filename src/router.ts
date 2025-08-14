@@ -33,8 +33,12 @@ router.get("/product/:id", memberController.retrieveAuth,
 
 //order
 router.post(
-    "/order/", memberController.verifyAuth,
+    "/order/create", memberController.verifyAuth,
     orderController.createOrder
+)
+router.get(
+    "/order/all", memberController.verifyAuth,
+    orderController.getMyOrders
 )
 
 
