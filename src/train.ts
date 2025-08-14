@@ -1,5 +1,35 @@
 console.log("This is the train.ts file");
 console.log('Bugungi MIT-Task natijasi: ');
+
+// TASK Z
+
+// Shunday function yozing. Bu function sonlardan iborat array
+// qabul qilsin. Function'ning vazifasi array tarkibidagi juft
+// sonlarni topib ularni yig'disini qaytarsin.
+
+// MASALAN:
+// sumEvens([1, 2, 3]); return 2;
+// sumEvens([1, 2, 3, 2]); return 4;
+
+// Yuqoridagi misolda, bizning funktsiya
+// berilayotgan array tarkibidagi sonlar ichidan faqatgina juft bo'lgan
+// sonlarni topib, ularni hisoblab yig'indisini qaytarmoqda.
+
+function sumEvens(arr: number[]): number {
+  let sum: number = 0;
+  for (let num of arr) {
+    if (num % 2 === 0) {
+      sum += num;
+    }
+  }
+  return sum;
+}
+
+// Test
+console.log(sumEvens([1, 2, 3]));      // 2
+console.log(sumEvens([1, 2, 3, 2]));   // 4
+
+
 /** TASK Y
 
 Shunday function yozing, uni 2'ta array parametri bo'lsin.
@@ -13,17 +43,17 @@ o'xshash sonlar mavjud. Function'ning vazifasi esa ana shu
 ikkala array'da ishtirok etgan o'xshash sonlarni yagona arrayga
 joylab return qilmoqda.*/
 
-function findIntersection<T>(arr1: T[], arr2: T[]): T[] {
-  const set1 = new Set(arr1);
-  const set2 = new Set(arr2);
+// function findIntersection<T>(arr1: T[], arr2: T[]): T[] {
+//   const set1 = new Set(arr1);
+//   const set2 = new Set(arr2);
 
-  // Filter elements that are in both sets
-  return [...set1].filter(item => set2.has(item));
-}
+//   // Filter elements that are in both sets
+//   return [...set1].filter(item => set2.has(item));
+// }
 
-// Example usage:
-console.log(findIntersection([1, 2, 3], [3, 2, 0])); // Output: [2, 3]
-console.log(findIntersection(["apple", "banana"], ["banana", "cherry"])); // Output: ["banana"]
+// // Example usage:
+// console.log(findIntersection([1, 2, 3], [3, 2, 0])); // Output: [2, 3]
+// console.log(findIntersection(["apple", "banana"], ["banana", "cherry"])); // Output: ["banana"]
 
 
 

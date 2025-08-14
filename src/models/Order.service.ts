@@ -1,6 +1,6 @@
 import OrderItemModel from "../schema/OrderItem.model";
 import OrderModel from "../schema/Order.model";
-import { Order, OrderInquiry, OrderItemInput } from "../libs/types/order";
+import { Order, OrderInquiry, OrderItemInput, OrderUpdateInput } from "../libs/types/order";
 import { Member } from "../libs/types/member";
 import { shapeIntoMongooseObjectId } from "../libs/utils/config";
 import Errors from "../libs/error";
@@ -104,9 +104,31 @@ if(!result) throw new Errors(HttpCode.NOT_FOUND, Message.NO_DATA_IS_FOUND);
 return result
 
 }
+public async updateOrder(
+member: Member,
+input: OrderUpdateInput
+): Promise<Order> {
+const memberId = shapeIntoMongooseObjectId(member._id),
+orderId = shapeIntoMongooseObjectId(input.orderId),
+orderStatus = input.orderStatus;
+
+const result = await this.orderModel
+.findOneAndUpdate({
+memberId: memberId,
+_id: orderId,
+},
+{orderStatus: orderStatus},
+{new: true}
+)
+.exec();
+
+if(!result) throw new Errors(HttpCode.NOT_MODIFIED, Message.UPDATE_FAILED);
+
+return result;
+
 }
 
 
 
-
+}
 export default OrderService;

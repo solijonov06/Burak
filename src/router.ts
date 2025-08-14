@@ -41,6 +41,11 @@ router.get(
     orderController.getMyOrders
 )
 
+router.post(
+    "/order/update",
+    memberController.verifyAuth,
+    orderController.updateOrder
+)
 
 
 
