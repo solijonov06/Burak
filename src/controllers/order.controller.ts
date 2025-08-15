@@ -49,7 +49,7 @@ const input: OrderUpdateInput = req.body;
 const result = await orderService.updateOrder(req.member, input)
 res.status(HttpCode.CREATED).json(result);
 }catch(err){
-console.log("Error, model: getMyOrders:", err);
+console.log("Error, model: updateOrder:", err);
 if(err instanceof Errors) res.status(err.code).json(err);
 else res.status(Errors.standard.code).json(Errors.standard);
 

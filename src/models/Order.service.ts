@@ -8,6 +8,7 @@ import { HttpCode } from "../libs/error";
 import { Message } from "../libs/error";
 import {ObjectId} from "mongoose";
 import MemberService from "./Member.service";
+import { OrderStatus } from "../libs/enums/order.enum";
 
 class OrderService{
     private readonly memberService;
@@ -126,11 +127,10 @@ _id: orderId,
 
 if(!result) throw new Errors(HttpCode.NOT_MODIFIED, Message.UPDATE_FAILED);
 
-return result;
-
+if(orderStatus === OrderStatus.PROCESS){
+    await this.memberService.addUserPoint(member,1);
 }
-
-
-
+return result;
+    }
 }
 export default OrderService;
