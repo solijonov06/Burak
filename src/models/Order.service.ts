@@ -21,8 +21,9 @@ class OrderService{
     }
 
     public async createOrder(member: Member,
-         input: OrderItemInput[]): Promise<Order>{
-           const memberId = shapeIntoMongooseObjectId(member._id);
+input: OrderItemInput[]): Promise<Order>{
+console.log("input", input);
+const memberId = shapeIntoMongooseObjectId(member._id);
 const amount = input.reduce((accumulator: number, item:OrderItemInput) => {
 return accumulator + item.itemPrice * item.itemQuantity;
 }, 0);
@@ -65,6 +66,7 @@ return "INSERTED";
 
 console.log("promisedList:", promisedList);
 const orderItemState = await Promise.all(promisedList);
+console.log("orderItemState", orderItemState)
 }
 
 public async getMyOrders(
