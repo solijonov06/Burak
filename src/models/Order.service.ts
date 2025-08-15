@@ -66,7 +66,7 @@ return "INSERTED";
 
 console.log("promisedList:", promisedList);
 const orderItemState = await Promise.all(promisedList);
-console.log("orderItemState", orderItemState)
+console.log("orderItemState", orderItemState);
 }
 
 public async getMyOrders(
