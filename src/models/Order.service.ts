@@ -21,11 +21,14 @@ class OrderService{
         this.orderItemModel = OrderItemModel;
     }
 
+
+    //define
     public async createOrder(member: Member,
 input: OrderItemInput[]): Promise<Order>{
 console.log("input", input);
 const memberId = shapeIntoMongooseObjectId(member._id);
 const amount = input.reduce((accumulator: number, item:OrderItemInput) => {
+console.log("accumulator:", accumulator);
 return accumulator + item.itemPrice * item.itemQuantity;
 }, 0);
 const delivery = amount < 100 ? 5 : 0 ;

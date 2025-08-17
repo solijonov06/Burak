@@ -1,6 +1,22 @@
 console.log("This is the train.ts file");
 console.log('Bugungi MIT-Task natijasi: ');
 
+
+/*ASK-ZB: Shunday function yozing, uni 2 ta number
+ parametri bolsin va berilgan sonlar orasidan random raqam return qilsin 
+ MASALAN: randomBetween(30, 50) return 45. 
+*/
+
+
+function randomBetween(min: number, max: number): number {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+// Misol:
+console.log(randomBetween(30, 50));
+
+
+
 // TASK Z
 
 // Shunday function yozing. Bu function sonlardan iborat array
@@ -15,19 +31,19 @@ console.log('Bugungi MIT-Task natijasi: ');
 // berilayotgan array tarkibidagi sonlar ichidan faqatgina juft bo'lgan
 // sonlarni topib, ularni hisoblab yig'indisini qaytarmoqda.
 
-function sumEvens(arr: number[]): number {
-  let sum: number = 0;
-  for (let num of arr) {
-    if (num % 2 === 0) {
-      sum += num;
-    }
-  }
-  return sum;
-}
+// function sumEvens(arr: number[]): number {
+//   let sum: number = 0;
+//   for (let num of arr) {
+//     if (num % 2 === 0) {
+//       sum += num;
+//     }
+//   }
+//   return sum;
+// }
 
-// Test
-console.log(sumEvens([1, 2, 3]));      // 2
-console.log(sumEvens([1, 2, 3, 2]));   // 4
+// // Test
+// console.log(sumEvens([1, 2, 3]));      // 2
+// console.log(sumEvens([1, 2, 3, 2]));   // 4
 
 
 /** TASK Y
