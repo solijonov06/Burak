@@ -14,6 +14,8 @@ export interface Product{
         productDesc?: string;
         productVolume: number;
         productViews: number;
+        createdAt: Date;
+        updated: Date;
 }
 
 export interface ProductInquiry{

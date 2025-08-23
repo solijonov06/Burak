@@ -1,3 +1,4 @@
+import cors from "cors";
 import express from "express"; 
 import path from "path";
 import routerAdmin from "./router-admin";
@@ -22,6 +23,12 @@ app.use(express.static(path.join(__dirname, "public"))) // faylorlarni public pa
 app.use("/uploads", express.static("./uploads")); // faylorlarni uploads papkasidan olish uchun
 app.use(express.urlencoded({extended: true})); // tradidional API uchun
 app.use(express.json()); // rest API uchun
+app.use(
+    cors({
+        credentials: true,
+        origin: true,
+    })
+)
 app.use(cookieParser())
 app.use(morgan(MORGAN_FORMAT));
 
