@@ -15,13 +15,13 @@ productController.getProducts = async (req: Request, res: Response) => {
     try{
         // console.log("req.member:",req.member)
         console.log("getProducts");
-     const{page, limit, order, productCollectiopn, search}=req.query;
+     const{page, limit, order, productCollection, search}=req.query;
      const inquiry: ProductInquiry = {
         order: String(order),
         page: Number(page),
         limit: Number(limit),
      };
-     if(productCollectiopn){ inquiry.productCollection = productCollectiopn as ProductCollection};
+     if(productCollection){ inquiry.productCollection = productCollection as ProductCollection};
 
         if(search) inquiry.search = String(search);
 
@@ -80,7 +80,7 @@ productController.createNewProduct = async (req: AdminRequest, res: Response) =>
 
         const data: ProductInput = req.body;
         data.productImages = req.files?.map(ele=> {
-            return ele.path.replace(/\\/g, "/"); // Windows compatibility
+            return ele.path
         })
 
         await productService.createNewProduct(data);
